@@ -1,0 +1,114 @@
+LectureNote3                                                           Mon, Jan 17
+
+induction of loop
+
+input a, b
+x = a, y = b, p = 0
+while(y>0){
+if y is odd {p = p + x}
+y = |_y/2_|
+x = 2x
+}
+
+Invariant
+ab = xy + p
+
+for all i at  the beginning of ith interation of loop, we have ab = xy + p
+
+x_i = value of x at the beginning of ith iteration of loop
+y_i = value of y at the beginning of ith iteration of loop
+p_i
+
+Base case:
+i = 1
+x_1 = a;
+y_1 = b;
+p_1 = 0;
+=> ab = x_1*y_1 + p_1
+
+Hypothesis:
+Assume at the beginning of mth iteration
+ab = x_m * y_m + p_m+1
+we need to prove that ab = x_m+1 * y_m+1 + p_m+1
+Proof:
+ab = x_m*y_m + P_m [by IH]
+during ith iteration
+Case1: y[same as y_m] is odd
+p_m+1 = p_m + x_m
+x_m+1 = 2*x_m
+y_m = 2k + 1 [for some k]
+y_m+1 = |_y_m/2_| = k
+=> x_m+1 * y_m+1 + p_m+1
+   = 2x_m * k + p_m + x_m
+   = 2x_m * k + x_m + p_m
+   = x_m(2k+1) + p_m
+   = x_m * y_m + p_m
+   = ab
+
+Case2: y is even
+p_m+1 - P_m
+x_m+1 = 2 * x_m
+y_m = 2k
+y_m+1 = k
+=> x_m+1 * y_m+1 + p_m+1
+   = 2x_m * k + p_m
+   = x_m * 2k + p_m
+   = x_m * y_m + p_m
+   = ab
+
+Proved!
+
+Selection Sort
+Input Array a of size n
+for i = 1 to n
+	i = minIndex
+	Find index of smallest element among a[i]...a[n]
+	let it be p
+	swap(a[p],a[i])
+
+invariant
+1. Before ith iteration a[1] to a[i-1] is sorted
+2. a[i-1] <= every element from a[i] to a[n]
+
+Base Case; i = 1
+a[1] to a[0] is true
+
+Induction
+Hypothesis:
+Assume at the beginning of i iteration 1 & 2 hold
+
+we need to prove that at the beginning of (i+1)th iteration
+1. a[1] to a[i] is sorted
+2. a[i] < every element from a[i+1] to a[n]
+also hold
+
+Proof:
+during the iteration
+at the beginning
+let the smallest element among a[i] to a[n] be s
+and it is bigger than a[i-1]
+
+by IH, s >= a[i-1] <==> a[i-1] <= s
+1. so a[1] to a[i] is sorted
+2. a[i] <= every element among a[i+1] to a[n]
+Proved!
+
+Interval Schedualing
+|-----|  |------|
+    |-----|    |-----| |-----|
+        |-----|
+
+Pick as many non-conflicting intervals as possible
+input set of intervals s = empty set
+
+pick the interval with earlist finish time that does not conflict with s
+add it to s
+
+Induction & contradiction
+Say greedy picks
+intervals G1 G2 Gq
+contradiction
+Assume there is a solution that gives >q intervals
+OPT O1 O2 Oq Oq+1
+
+

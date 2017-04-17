@@ -1,0 +1,37 @@
+LectureNote2                                                        Thu, Jan 12
+
+Array of integers 
+	int target
+Are there two integers [possibly same] in the Array whose sum quals target
+
+All pairs of integers if any of them sum to target(a[0] and target[0])
+
+use currentTimeMillis() to compute the running time
+long start = System.currentTimeMillis();
+long end = System.currentTimeMills();
+
+to improve this:
+we can sort the array for i=1 to length-1
+left = target - a[i]
+Do a binary search for the left in Array
+
+
+movie picking problem:
+* look at all possible subsets of movies
+remove conflictinh subset
+pick the largest subset
+
+*Form a graph and find the longest path
+
+*choose the earliest finish time and remove all conflictiog movies
+
+proof method:
+induction and proof by contradiction
+
+induction:
+*basic step:
+	prove that the first one is true(holds)
+*Hypothesis:
+	Assume that n is true(holds) then n+1 should be true(holds)
+	then prove it.
+

@@ -1,0 +1,73 @@
+LectureNote6							Thu, Jan 26
+
+selection sort
+Insertion sort
+               selection            insertion
+worst-case ->  O(n^2)		     O(n^2)
+Best-case  ->  O(n^2)		     O(n)
+
+Matrix multiplication
+
+input: A, B [two n*n matrices]
+
+for(int r = 1; r <= n; r++){
+  for(int c = 1; c <= n; c++){
+    //multiply rth row of A with cth col of B to compute p[r][c]
+    p[r][c] = 0;
+    for(j=1;j<=n;j++){
+	p[r][c] = A[v][j] * B[j][c] + p[r][c];
+
+    }
+  }
+}
+
+for each value of c we ran inner most loop n time
+Since c ranges from 1 then n
+Total time O(n^3)
+
+
+BinarySearch(a, start, end, key){
+  //check if key appears in a[start] a[start+1]...a[end]
+  middle = (end+start)/2;
+  if(a[middle] == key) return true;
+  if(a[middle] < key) BinarySearch(a, middle+1, end, key);
+  else BianrySearch(a, start, middle-1, key);
+
+end-start = n
+T(n) = 2 + T(n/2)  Recurrence relation
+     = 2 + 2 + T(n/4)
+     = 4 + T(n/4)
+     = 6 + T(n/8)
+     = 8 + T(n/16)
+     = 10 + T(n/32)
+  ** = 2 * k + T(n/2^k)
+	.
+	.
+	.
+     = 2logn + T(n/2^logn)
+     = 2logn + T(1)
+     = 2logn + 1
+
+logn n n^2 n^3 2^n n!
+
+subset sum problem
+set s = {a_1, a_2 .... a_n}
+Target = T
+is there a subset s' belongs to s taht when we add all elements in s' we get T?
+
+for every subset s' of s{
+check if sum of elements in s' is T. if so return true
+}
+return false
+
+
+
+
+
+
+
+
+
+
+
+

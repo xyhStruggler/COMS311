@@ -1,0 +1,78 @@
+LectureNote4                                                            Thu, Jan 19
+
+Chapter 2
+
+Measuring Run-time & Big-oh
+
+run-time depends on input instance and input size(the number of bits needed to represent the input) 
+
+input -> algorithm -> output
+
+input
+Integer 1024
+
+size(1024) = 10
+size(n) = (upper bound)log_2 n
+
+size of array is the number of elements in the array
+size of string is the number of characters in the string
+size of graph is the number of vertices and the number of edges in the graph
+
+Fix a size 10
+there are lots of inputs of that size
+
+We will measure run-time using only input-size
+
+---------
+
+function
+t: N -> N
+t(5)    t(n) = 5n^2
+
+Time: number of primitive operations algorithm performs
+ 
+Intergers
++, *, -, /  ---> 1 unit time
+Access a memory location -> 1 unit time
+
+Character comparison, Increment/decrement
+
+Best-case complexity
+Worst-case complexity
+
+Def: Let A be an algorithm and t: N -> N
+we say that the Best-case time-complexity of A is t(n) for all n there exists an instance x of size n, A(n) run <= t(n)time/t(n) operations
+
+We say that the Worst-case time complexity of A is t(n)
+for all n, all x of size n, A(n) runs <= t(n) time
+
+Input integer x of size n
+for(int i=2; i<x; i++){
+	if (x%i == 0)  return false;
+}
+return true
+
+t(n) = 5
+Best-case complexity
+
+1+(x+2) * 4 + 1
+Worst case complexity
+t(n) = (2^n-2)*4 +2
+t(n) = 2^n
+
+Def: Big-Oh
+let f: N -> N & g: N -> N be two functions
+we say f(n) belongs to O(g(n))
+if there exits a constant c >= 1
+for all n >= N_0, c*f(n) <= g(n)
+exist a constant N_0
+
+f(n) = 5n
+g(n) = n^2
+f(n) belongs to O(g(n))
+pick c = 1/5
+than for all n >= 0
+c*5n <= n^2
+
+
+

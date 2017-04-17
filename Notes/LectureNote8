@@ -1,0 +1,38 @@
+LectureNote8 							Thu, Feb 2
+
+bianry search trees
+
+the left kid is less than parent and the right kid is bigger than parent
+
+balanced and unbalanced
+
+balancedeL
+for all node:
+left tree's height is the same with right tree's height 
+
+worst case: inserting in sorted order depth -> n
+best case: inserting the midian element first and each parent is the median. depth -> logn
+
+Average depth of BST
+s = {1,2,....,n}
+
+				  n
+			3n/4		1n/4
+		...				...
+(3/4)^k * n = 1
+k is logn base 3/4
+
+balanced search tree
+
+insert remove search all take O(logn)
+
+Hash tables:
+insert O(Time taken to compute h)
+search O(1)
+remove O(1)
+
+hash functions in java
+FNV
+Jenkins
+...
+

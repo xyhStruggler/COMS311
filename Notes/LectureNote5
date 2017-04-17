@@ -1,0 +1,63 @@
+LectureNote5             					Tue, Jan 24
+
+for(int i = 1; i<=n, ++i)
+{
+for(int j = i; j<=n;++j)
+{
+print(i+j)
+}
+}
+
+(n-i+1)
+
+n(n+1)/2
+
+while(n>=1)
+{
+if n is even n = n/2;
+else n = (n-1)/2;
+}
+
+n's binary represantation
+101010
+10101
+10100 1010
+logn bits
+
+
+input an array of of ints a
+for(int i=1; i<a.length;i++ ){
+if a[i]%2 == 0 return true;
+}
+return false;
+
+Best case: when the first element of a is even. O(1)
+Worst case: when every element of a is odd. O(n)
+
+give an array of integers
+check if the array has any duplicate elements
+
+Input Array a of size n
+for(int i=1; i<n;i++){
+//check if a[i] is among a[i+1]...a[n]
+for(int j = i+1; j<n;j++){
+if a[i] == a[j] return true;
+}
+}
+return false;
+
+Best case: when array in which a[1] = a[i]. O(1)
+Worst case: There is no duplicate elements in this array. O(n^2)
+
+
+insertion sort
+for(int i=2;i<=n;++i){
+//insert a[i] into a[1]...a[i-1]
+j=i
+while(j>=1 && a[j-1]>j[i]){
+	swap(a[j], a[j-1]);
+	j--;
+}
+
+Best case: when the array is sorted. O(n)
+Worst case: O(n^2)
